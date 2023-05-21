@@ -22,7 +22,6 @@ final class WeatherDataFetcher {
         case 200:
             do {
                 let resultData = try JSONDecoder().decode(WeatherData.self, from: data)
-                print(resultData)
                 return resultData
             } catch {
                 throw APIError.jsonDecode
