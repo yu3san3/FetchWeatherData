@@ -15,6 +15,7 @@
 		EB0392DA2A1A4F5600D2AEE7 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0392D92A1A4F5600D2AEE7 /* ContentViewModel.swift */; };
 		EB0392DC2A1A4FAC00D2AEE7 /* WeatherDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0392DB2A1A4FAC00D2AEE7 /* WeatherDataFetcher.swift */; };
 		EB0392DE2A1A4FCD00D2AEE7 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0392DD2A1A4FCD00D2AEE7 /* APIError.swift */; };
+		EB0392E02A1A5C0500D2AEE7 /* LoadingViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0392DF2A1A5C0500D2AEE7 /* LoadingViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EB0392D92A1A4F5600D2AEE7 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		EB0392DB2A1A4FAC00D2AEE7 /* WeatherDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataFetcher.swift; sourceTree = "<group>"; };
 		EB0392DD2A1A4FCD00D2AEE7 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		EB0392DF2A1A5C0500D2AEE7 /* LoadingViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				EB0392C82A1A4EA900D2AEE7 /* FetchWeatherDataApp.swift */,
 				EB0392CA2A1A4EA900D2AEE7 /* ContentView.swift */,
+				EB0392DF2A1A5C0500D2AEE7 /* LoadingViewModifier.swift */,
 				EB0392D92A1A4F5600D2AEE7 /* ContentViewModel.swift */,
 				EB0392DB2A1A4FAC00D2AEE7 /* WeatherDataFetcher.swift */,
 				EB0392DD2A1A4FCD00D2AEE7 /* APIError.swift */,
@@ -155,6 +158,7 @@
 				EB0392CB2A1A4EA900D2AEE7 /* ContentView.swift in Sources */,
 				EB0392D82A1A4EED00D2AEE7 /* WeatherData.swift in Sources */,
 				EB0392C92A1A4EA900D2AEE7 /* FetchWeatherDataApp.swift in Sources */,
+				EB0392E02A1A5C0500D2AEE7 /* LoadingViewModifier.swift in Sources */,
 				EB0392DC2A1A4FAC00D2AEE7 /* WeatherDataFetcher.swift in Sources */,
 				EB0392DE2A1A4FCD00D2AEE7 /* APIError.swift in Sources */,
 			);
