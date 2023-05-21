@@ -11,6 +11,7 @@ final class ContentViewModel: ObservableObject {
     @Published var weatherData: WeatherData? = nil
     @Published var shouldShowIndicator: Bool = false
     @Published var error: APIError?
+    @Published var shouldShowAlert = false
     
     private let fetcher = WeatherDataFetcher()
     
@@ -27,8 +28,10 @@ final class ContentViewModel: ObservableObject {
             } catch {
                 if let apiError = error as? APIError {
                     self.error = apiError
+                    shouldShowAlert = true
                 } else if let error = error as? URLError, error.code == URLError.notConnectedToInternet {
                     self.error = APIError.network
+                    shouldShowAlert = true
                 } else {
                     print(error.localizedDescription)
                 }

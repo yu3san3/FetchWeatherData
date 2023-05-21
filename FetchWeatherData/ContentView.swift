@@ -24,6 +24,11 @@ struct ContentView: View {
         .onAppear {
             contentVM.fetchWeatherData()
         }
+        .alert(isPresented: $contentVM.shouldShowAlert, error: contentVM.error) { _ in
+            Button("OK", action: {})
+        } message: { error in
+            Text(error.errorDescription ?? "nil")
+        }
     }
 }
 
