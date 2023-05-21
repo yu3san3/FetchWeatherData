@@ -16,6 +16,7 @@
 		EB0392DC2A1A4FAC00D2AEE7 /* WeatherDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0392DB2A1A4FAC00D2AEE7 /* WeatherDataFetcher.swift */; };
 		EB0392DE2A1A4FCD00D2AEE7 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0392DD2A1A4FCD00D2AEE7 /* APIError.swift */; };
 		EB0392E02A1A5C0500D2AEE7 /* LoadingViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0392DF2A1A5C0500D2AEE7 /* LoadingViewModifier.swift */; };
+		EB0392E22A1A6A4E00D2AEE7 /* TemperatureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0392E12A1A6A4E00D2AEE7 /* TemperatureData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		EB0392DB2A1A4FAC00D2AEE7 /* WeatherDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataFetcher.swift; sourceTree = "<group>"; };
 		EB0392DD2A1A4FCD00D2AEE7 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		EB0392DF2A1A5C0500D2AEE7 /* LoadingViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModifier.swift; sourceTree = "<group>"; };
+		EB0392E12A1A6A4E00D2AEE7 /* TemperatureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				EB0392DB2A1A4FAC00D2AEE7 /* WeatherDataFetcher.swift */,
 				EB0392DD2A1A4FCD00D2AEE7 /* APIError.swift */,
 				EB0392D72A1A4EED00D2AEE7 /* WeatherData.swift */,
+				EB0392E12A1A6A4E00D2AEE7 /* TemperatureData.swift */,
 				EB0392CC2A1A4EAE00D2AEE7 /* Assets.xcassets */,
 				EB0392CE2A1A4EAE00D2AEE7 /* FetchWeatherData.entitlements */,
 				EB0392CF2A1A4EAE00D2AEE7 /* Preview Content */,
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB0392DA2A1A4F5600D2AEE7 /* ContentViewModel.swift in Sources */,
+				EB0392E22A1A6A4E00D2AEE7 /* TemperatureData.swift in Sources */,
 				EB0392CB2A1A4EA900D2AEE7 /* ContentView.swift in Sources */,
 				EB0392D82A1A4EED00D2AEE7 /* WeatherData.swift in Sources */,
 				EB0392C92A1A4EA900D2AEE7 /* FetchWeatherDataApp.swift in Sources */,

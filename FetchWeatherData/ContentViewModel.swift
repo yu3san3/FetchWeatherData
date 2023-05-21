@@ -8,10 +8,15 @@
 import Foundation
 
 final class ContentViewModel: ObservableObject {
-    @Published var weatherData: WeatherData? = nil
+    @Published var weatherData: WeatherData?
+    
+    private var maxTemperatureData: [(date: String, temperature: Double)] = []
+    private var minTemperatureData: [(date: String, temperature: Double)] = []
+    @Published var temperatureData: [(chartType: String, data: [(date: String, temperature: Double)])] = []
+    
     @Published var shouldShowIndicator: Bool = false
-    @Published var error: APIError?
     @Published var shouldShowAlert = false
+    @Published var error: APIError?
     
     private let fetcher = WeatherDataFetcher()
     
@@ -25,6 +30,18 @@ final class ContentViewModel: ObservableObject {
             
             do {
                 weatherData = try await fetcher.fetchWeatherData()
+                maxTemperatureData = zip(weatherData!.daily.time, weatherData!.daily.temperature2mMax)
+                    .map { (date, temperature) in
+                        return (date: date, temperature: temperature)
+                    }
+                minTemperatureData = zip(weatherData!.daily.time, weatherData!.daily.temperature2mMin)
+                    .map { (date, temperature) in
+                        return (date: date, temperature: temperature)
+                    }
+                temperatureData = [
+                    (chartType: "最高気温", data: maxTemperatureData),
+                    (chartType: "最低気温", data: minTemperatureData)
+                ]
             } catch {
                 if let apiError = error as? APIError {
                     self.error = apiError
