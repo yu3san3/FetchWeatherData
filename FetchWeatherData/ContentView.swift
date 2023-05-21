@@ -20,6 +20,7 @@ struct ContentView: View {
                 Text("経度" + String(longitude))
             }
         }
+        .loading(isRefleshing: contentVM.shouldShowIndicator)
         .onAppear {
             contentVM.fetchWeatherData()
         }

@@ -9,12 +9,17 @@ import Foundation
 
 final class ContentViewModel: ObservableObject {
     @Published var weatherData: WeatherData? = nil
+    @Published var shouldShowIndicator: Bool = false
     @Published var error: APIError?
     
     private let fetcher = WeatherDataFetcher()
     
     func fetchWeatherData() {
         Task { @MainActor in
+            shouldShowIndicator = true
+            defer {
+                shouldShowIndicator = false
+            }
 //            try? await Task.sleep(nanoseconds: 1_000_000_000)
             
             do {
