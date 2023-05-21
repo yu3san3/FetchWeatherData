@@ -19,6 +19,7 @@ struct ContentView: View {
             if let longitude = contentVM.weatherData?.longitude {
                 Text("経度" + String(longitude))
             }
+            ChartView(temperatureData: contentVM.temperatureData)
         }
         .loading(isRefleshing: contentVM.shouldShowIndicator)
         .onAppear {
