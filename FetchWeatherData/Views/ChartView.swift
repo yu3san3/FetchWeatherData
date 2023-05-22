@@ -10,11 +10,13 @@ import Charts
 
 struct ChartView: View {
     
-    let temperatureData: [ChartData]
+    @StateObject var chartVM = ChartViewModel()
+    
+    let weatherData: WeatherData
     
     var body: some View {
         Chart {
-            ForEach(temperatureData, id: \.chartName) { temperature in
+            ForEach(chartVM.chartData, id: \.chartName) { temperature in
                 ForEach(temperature.data) {
                     LineMark (
                         x: .value("date", $0.date),
@@ -23,6 +25,9 @@ struct ChartView: View {
                 }
                 .foregroundStyle(by: .value("chartType", temperature.chartName))
             }
+        }
+        .onAppear {
+            chartVM.generateChartData(weatherData: weatherData)
         }
     }
 }
