@@ -21,8 +21,8 @@ final class ChartViewModel: ObservableObject {
                 return TemperatureDataElement(date: date, temperature: temperature)
             }
         chartData = [
-            ChartData(chartName: "最高気温", data: maxTemperatureData),
-            ChartData(chartName: "最低気温", data: minTemperatureData)
+            ChartData(name: "最高気温", data: maxTemperatureData),
+            ChartData(name: "最低気温", data: minTemperatureData)
         ]
     }
 }

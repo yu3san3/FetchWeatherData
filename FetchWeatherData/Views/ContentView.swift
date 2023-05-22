@@ -13,14 +13,17 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            if let latitude = contentVM.weatherData?.latitude {
-                Text("緯度 " + String(latitude))
-            }
-            if let longitude = contentVM.weatherData?.longitude {
-                Text("経度" + String(longitude))
+            HStack {
+                if let latitude = contentVM.weatherData?.latitude {
+                    Text("緯度 " + String(latitude) + ",")
+                }
+                if let longitude = contentVM.weatherData?.longitude {
+                    Text("経度" + String(longitude))
+                }
             }
             if let weatherData = contentVM.weatherData {
                 ChartView(weatherData: weatherData)
+                    .padding()
             }
         }
         .loading(isRefleshing: contentVM.shouldShowIndicator)

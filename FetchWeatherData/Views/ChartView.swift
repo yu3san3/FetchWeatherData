@@ -16,14 +16,16 @@ struct ChartView: View {
     
     var body: some View {
         Chart {
-            ForEach(chartVM.chartData, id: \.chartName) { temperature in
-                ForEach(temperature.data) {
+            ForEach(chartVM.chartData, id: \.name) { chartData in
+                ForEach(chartData.data) {
+                    let parts = $0.date.split(separator: "-")
                     LineMark (
-                        x: .value("date", $0.date),
-                        y: .value("temperature", $0.temperature)
+                        x: .value("Date", parts[1] + "/" + parts[2]),
+                        y: .value("Temperature", $0.temperature)
                     )
                 }
-                .foregroundStyle(by: .value("chartType", temperature.chartName))
+                .foregroundStyle(by: .value("Name", chartData.name))
+                .symbol(by: .value("Name", chartData.name))
             }
         }
         .onAppear {
@@ -32,8 +34,8 @@ struct ChartView: View {
     }
 }
 
-//struct ChartView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ChartView(temperatureData: )
-//    }
-//}
+struct ChartView_Previews: PreviewProvider {
+    static var previews: some View {
+        ChartView(weatherData: mockWeatherData)
+    }
+}

@@ -8,8 +8,8 @@
 import Foundation
 
 struct ChartData: Identifiable {
-    var id: String { return chartName }
-    let chartName: String
+    var id: String { return name }
+    let name: String
     let data: [TemperatureDataElement]
 }
 
