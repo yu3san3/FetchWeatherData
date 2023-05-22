@@ -12,7 +12,7 @@ final class ContentViewModel: ObservableObject {
     
     private var maxTemperatureData: [TemperatureDataElement] = []
     private var minTemperatureData: [TemperatureDataElement] = []
-    @Published var temperatureData: [TemperatureData] = []
+    @Published var temperatureData: [ChartData] = []
     
     @Published var shouldShowIndicator: Bool = false
     @Published var shouldShowAlert = false
@@ -39,8 +39,8 @@ final class ContentViewModel: ObservableObject {
                         return TemperatureDataElement(date: date, temperature: temperature)
                     }
                 temperatureData = [
-                    TemperatureData(chartType: "最高気温", data: maxTemperatureData),
-                    TemperatureData(chartType: "最低気温", data: minTemperatureData)
+                    ChartData(chartName: "最高気温", data: maxTemperatureData),
+                    ChartData(chartName: "最低気温", data: minTemperatureData)
                 ]
             } catch {
                 if let apiError = error as? APIError {
