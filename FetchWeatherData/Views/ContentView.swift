@@ -11,8 +11,14 @@ struct ContentView: View {
     
     @StateObject var contentVM = ContentViewModel()
     
+    @StateObject var manager = LocationManager()
+    
     var body: some View {
         VStack {
+            HStack {
+                Text("\(manager.location.coordinate.latitude)")
+                Text("\(manager.location.coordinate.longitude)")
+            }
             HStack {
                 if let latitude = contentVM.weatherData?.latitude {
                     Text("緯度 " + String(latitude) + ",")
