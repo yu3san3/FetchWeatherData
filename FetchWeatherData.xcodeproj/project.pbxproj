@@ -102,9 +102,10 @@
 		EB0392E62A1A7C4300D2AEE7 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				EB0392DB2A1A4FAC00D2AEE7 /* WeatherDataFetcher.swift */,
+				EBD309C82A1D61F800EFE65E /* LocationManager.swift */,
 				EB0392DF2A1A5C0500D2AEE7 /* LoadingViewModifier.swift */,
 				EB0392DD2A1A4FCD00D2AEE7 /* APIError.swift */,
-				EBD309C82A1D61F800EFE65E /* LocationManager.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -122,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				EB0392D92A1A4F5600D2AEE7 /* ContentViewModel.swift */,
-				EB0392DB2A1A4FAC00D2AEE7 /* WeatherDataFetcher.swift */,
 				EBD309C62A1BBC9A00EFE65E /* ChartViewModel.swift */,
 			);
 			path = ViewModel;
