@@ -10,15 +10,14 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var contentVM = ContentViewModel()
-    
-    @StateObject var manager = LocationManager()
+    @StateObject var locationManager = LocationManager()
     
     var body: some View {
         VStack {
-            HStack {
-                Text("\(manager.location.coordinate.latitude)")
-                Text("\(manager.location.coordinate.longitude)")
-            }
+//            HStack {
+//                Text("\(manager.location.coordinate.latitude)")
+//                Text("\(manager.location.coordinate.longitude)")
+//            }
             HStack {
                 if let latitude = contentVM.weatherData?.latitude {
                     Text("緯度 " + String(latitude) + ",")
@@ -34,6 +33,9 @@ struct ContentView: View {
         }
         .loading(isRefleshing: contentVM.shouldShowIndicator)
         .onAppear {
+            contentVM.fetchWeatherData()
+        }
+        .onChange(of: locationManager.location) { _ in
             contentVM.fetchWeatherData()
         }
         .alert(isPresented: $contentVM.shouldShowAlert, error: contentVM.error) { _ in

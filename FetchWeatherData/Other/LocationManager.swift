@@ -9,6 +9,7 @@ import MapKit
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
+    
     @Published var location = CLLocation()
     
     override init() {
@@ -23,5 +24,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.location = locations.last!
+        print("🌍Location Updated!")
     }
 }

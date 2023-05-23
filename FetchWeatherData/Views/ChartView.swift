@@ -11,11 +11,13 @@ import Charts
 struct ChartView: View {
     
     @StateObject var chartVM = ChartViewModel()
+//    @StateObject var locationManager = LocationManager()
     
     let weatherData: WeatherData
     
     var body: some View {
         Chart {
+            let _ = print("chart running\(weatherData)")
             ForEach(chartVM.chartData, id: \.name) { chartData in
                 ForEach(chartData.data) {
                     let parts = $0.date.split(separator: "-")
@@ -29,6 +31,10 @@ struct ChartView: View {
             }
         }
         .onAppear {
+            chartVM.generateChartData(weatherData: weatherData)
+        }
+        .onChange(of: [weatherData.latitude, weatherData.longitude]) { _ in
+            print("chart updated!")
             chartVM.generateChartData(weatherData: weatherData)
         }
     }
