@@ -38,10 +38,7 @@ struct ContentView: View {
             }
         }
         .loading(isRefleshing: contentVM.shouldShowIndicator)
-        .onAppear {
-            contentVM.fetchWeatherData()
-        }
-        .onChange(of: locationManager.location) { _ in
+        .task(id: locationManager.location) {
             contentVM.fetchWeatherData()
             contentVM.fetchCityData()
         }

@@ -16,7 +16,6 @@ struct ChartView: View {
     
     var body: some View {
         Chart {
-            let _ = print("chart running\(weatherData.latitude)")
             ForEach(chartVM.chartData, id: \.name) { chartData in
                 ForEach(chartData.data) {
                     let parts = $0.date.split(separator: "-")
@@ -29,11 +28,7 @@ struct ChartView: View {
                 .symbol(by: .value("Name", chartData.name))
             }
         }
-        .onAppear {
-            chartVM.generateChartData(weatherData: weatherData)
-        }
-        .onChange(of: [weatherData.latitude, weatherData.longitude]) { _ in
-            print("👊chart updated! \(weatherData.latitude)")
+        .task(id: [weatherData.latitude, weatherData.longitude]) {
             withAnimation {
                 chartVM.generateChartData(weatherData: weatherData)
             }
