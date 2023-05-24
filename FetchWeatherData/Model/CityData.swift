@@ -8,6 +8,14 @@
 import Foundation
 
 struct CityData: Codable {
+    let response: Response
+    
+    enum CodingKeys: String, CodingKey {
+        case response
+    }
+}
+
+struct Response: Codable {
     let location: [Location]
     
     enum CodingKeys: String, CodingKey {

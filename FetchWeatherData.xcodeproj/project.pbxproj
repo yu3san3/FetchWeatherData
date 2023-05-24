@@ -21,6 +21,7 @@
 		EBD309C72A1BBC9A00EFE65E /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD309C62A1BBC9A00EFE65E /* ChartViewModel.swift */; };
 		EBD309C92A1D61F800EFE65E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD309C82A1D61F800EFE65E /* LocationManager.swift */; };
 		EBD309CB2A1E463400EFE65E /* CityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD309CA2A1E463400EFE65E /* CityData.swift */; };
+		EBD309CD2A1E48B700EFE65E /* CityDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD309CC2A1E48B700EFE65E /* CityDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		EBD309C62A1BBC9A00EFE65E /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		EBD309C82A1D61F800EFE65E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		EBD309CA2A1E463400EFE65E /* CityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityData.swift; sourceTree = "<group>"; };
+		EBD309CC2A1E48B700EFE65E /* CityDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				EB0392DB2A1A4FAC00D2AEE7 /* WeatherDataFetcher.swift */,
+				EBD309CC2A1E48B700EFE65E /* CityDataFetcher.swift */,
 				EBD309C82A1D61F800EFE65E /* LocationManager.swift */,
 				EB0392DF2A1A5C0500D2AEE7 /* LoadingViewModifier.swift */,
 				EB0392DD2A1A4FCD00D2AEE7 /* APIError.swift */,
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD309CD2A1E48B700EFE65E /* CityDataFetcher.swift in Sources */,
 				EBD309CB2A1E463400EFE65E /* CityData.swift in Sources */,
 				EB0392DA2A1A4F5600D2AEE7 /* ContentViewModel.swift in Sources */,
 				EB0392E22A1A6A4E00D2AEE7 /* ChartData.swift in Sources */,
