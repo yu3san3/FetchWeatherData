@@ -11,7 +11,6 @@ import Charts
 struct ChartView: View {
     
     @StateObject var chartVM = ChartViewModel()
-//    @StateObject var locationManager = LocationManager()
     
     let weatherData: WeatherData
     

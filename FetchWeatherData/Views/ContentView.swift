@@ -18,14 +18,6 @@ struct ContentView: View {
                 Text("緯度: \(locationManager.location.coordinate.latitude)")
                 Text("経度: \(locationManager.location.coordinate.longitude)")
             }
-//            HStack {
-//                if let latitude = contentVM.weatherData?.latitude {
-//                    Text("緯度 " + String(latitude) + ",")
-//                }
-//                if let longitude = contentVM.weatherData?.longitude {
-//                    Text("経度" + String(longitude))
-//                }
-//            }
             HStack {
                 if let prefecture = contentVM.cityData?.response.location[0].prefecture {
                     Text(prefecture)
@@ -33,9 +25,10 @@ struct ContentView: View {
                 if let city = contentVM.cityData?.response.location[0].city {
                     Text(city)
                 }
-                if let town = contentVM.cityData?.response.location[0].town {
-                    Text(town)
-                }
+                //townのデータは不正確なことが多い
+//                if let town = contentVM.cityData?.response.location[0].town {
+//                    Text(town)
+//                }
             }
             if let weatherData = contentVM.weatherData {
                 ChartView(weatherData: weatherData)
