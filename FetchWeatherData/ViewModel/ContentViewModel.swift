@@ -9,7 +9,8 @@ import Foundation
 
 final class ContentViewModel: ObservableObject {
     @Published var weatherData: WeatherData?
-    @Published var cityData: CityData?
+    @Published var prefectureAndCityName: String = ""
+    @Published var cityKana: String = ""
     
     @Published var shouldShowIndicator: Bool = false
     @Published var shouldShowAlert = false
@@ -49,7 +50,9 @@ final class ContentViewModel: ObservableObject {
             }
             
             do {
-                cityData = try await cityDataFetcher.fetchCityData()
+                let cityData = try await cityDataFetcher.fetchCityData()
+                prefectureAndCityName = cityData.response.location[0].prefecture + cityData.response.location[0].city
+                cityKana = cityData.response.location[0].cityKana
             } catch {
                 if let apiError = error as? APIError {
                     self.error = apiError

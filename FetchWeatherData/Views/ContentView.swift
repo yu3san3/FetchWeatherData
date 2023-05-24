@@ -4,37 +4,60 @@
 //
 //  Created by 丹羽雄一朗 on 2023/05/21.
 //
+//  2023/05/25 Alpha 1.0.0(1)
 
 import SwiftUI
+
+//バージョン情報
+let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+//ビルド情報
+let appBuildNum = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
 
 struct ContentView: View {
     
     @StateObject var contentVM = ContentViewModel()
     @StateObject var locationManager = LocationManager()
     
+    @State private var shouldShowAlert: Bool = false
+    
     var body: some View {
         VStack {
-            HStack {
-                Text("緯度: \(locationManager.location.coordinate.latitude)")
-                Text("経度: \(locationManager.location.coordinate.longitude)")
-            }
-            HStack {
-                if let prefecture = contentVM.cityData?.response.location[0].prefecture {
-                    Text(prefecture)
+            VStack(spacing: 7) {
+                ZStack {
+                    VStack {
+                        Text(contentVM.prefectureAndCityName)
+                            .font(.title)
+                            .bold()
+                        Text(contentVM.cityKana)
+                    }
+                    HStack() {
+                        Spacer()
+                        Button(action: {
+                            shouldShowAlert = true
+                        }) {
+                            Image(systemName: "info.circle")
+                        }
+                        .alert(
+                            "Version \(appVersion)(\(appBuildNum))",
+                               isPresented: $shouldShowAlert
+                        ) {
+                            Button("OK") {}
+                        }
+                    }
                 }
-                if let city = contentVM.cityData?.response.location[0].city {
-                    Text(city)
+                HStack {
+                    Text("緯度 \(locationManager.location.coordinate.latitude)")
+                    Text("経度 \(locationManager.location.coordinate.longitude)")
                 }
-                //townのデータは不正確なことが多い
-//                if let town = contentVM.cityData?.response.location[0].town {
-//                    Text(town)
-//                }
             }
-            if let weatherData = contentVM.weatherData {
-                ChartView(weatherData: weatherData)
-                    .padding()
-            } else {
-                Spacer()
+            .padding()
+            Group {
+                if let weatherData = contentVM.weatherData {
+                    ChartView(weatherData: weatherData)
+                        .padding(.horizontal)
+                } else {
+                    Spacer()
+                }
             }
         }
         .loading(isRefleshing: contentVM.shouldShowIndicator)
