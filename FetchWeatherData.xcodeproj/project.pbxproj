@@ -20,6 +20,7 @@
 		EB0392E42A1A76BA00D2AEE7 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0392E32A1A76BA00D2AEE7 /* ChartView.swift */; };
 		EBD309C72A1BBC9A00EFE65E /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD309C62A1BBC9A00EFE65E /* ChartViewModel.swift */; };
 		EBD309C92A1D61F800EFE65E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD309C82A1D61F800EFE65E /* LocationManager.swift */; };
+		EBD309CB2A1E463400EFE65E /* CityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD309CA2A1E463400EFE65E /* CityData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		EB0392E32A1A76BA00D2AEE7 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		EBD309C62A1BBC9A00EFE65E /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		EBD309C82A1D61F800EFE65E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		EBD309CA2A1E463400EFE65E /* CityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				EB0392D72A1A4EED00D2AEE7 /* WeatherData.swift */,
 				EB0392E12A1A6A4E00D2AEE7 /* ChartData.swift */,
+				EBD309CA2A1E463400EFE65E /* CityData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD309CB2A1E463400EFE65E /* CityData.swift in Sources */,
 				EB0392DA2A1A4F5600D2AEE7 /* ContentViewModel.swift in Sources */,
 				EB0392E22A1A6A4E00D2AEE7 /* ChartData.swift in Sources */,
 				EB0392CB2A1A4EA900D2AEE7 /* ContentView.swift in Sources */,
