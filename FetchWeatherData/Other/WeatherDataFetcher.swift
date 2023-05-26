@@ -18,7 +18,7 @@ final class WeatherDataFetcher {
         locationManager.location.coordinate.longitude
     }
     var url: URL {
-        URL(string: "https://api.open-meteo.com/v1/forecast?latitude=\(currentLatitude)&longitude=\(currentLongitude)&daily=temperature_2m_max,temperature_2m_min&past_days=7&forecast_days=2&timezone=Asia%2FTokyo")!
+        URL(string: "https://api.open-meteo.com/v1/forecast?latitude=\(currentLatitude)&longitude=\(currentLongitude)&daily=temperature_2m_max,temperature_2m_min&past_days=6&forecast_days=2&timezone=Asia%2FTokyo")!
     }
     
     func fetchWeatherData() async throws -> WeatherData {

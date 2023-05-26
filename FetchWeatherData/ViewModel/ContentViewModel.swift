@@ -13,7 +13,7 @@ final class ContentViewModel: ObservableObject {
     @Published var cityKana: String = ""
     
     @Published var shouldShowIndicator: Bool = false
-    @Published var shouldShowAlert = false
+    @Published var shouldShowAlert: Bool = false
     @Published var error: APIError?
     
     private let weatherDataFetcher = WeatherDataFetcher()
